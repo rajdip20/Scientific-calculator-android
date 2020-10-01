@@ -312,8 +312,11 @@ public class MainActivity extends AppCompatActivity {
             int len = user_input.getText().length();
             String s = user_input.getText().toString();
             if (s.charAt(len - 1) == '.') {
+                try{
                 has_Dot = false;
                 user_input.setText(user_input.getText().subSequence(0, user_input.getText().length() - 1));
+                }catch(Exception e){
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();}
 
             } else {
                 user_input.setText(user_input.getText().subSequence(0, user_input.getText().length() - 1));
